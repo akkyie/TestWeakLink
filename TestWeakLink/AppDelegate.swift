@@ -13,7 +13,7 @@ struct Foo {}
 
 @available(iOS 13.0, *)
 extension Foo: View {
-    var body: AnyView {
-        AnyView(EmptyView().padding())
+    var body: some View { // ORT here, but avoiding it doesn't seem to help
+        EmptyView().previewDisplayName("Foo")
     }
 }
